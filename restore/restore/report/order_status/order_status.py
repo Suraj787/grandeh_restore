@@ -114,7 +114,7 @@ def prepare_data(filters):
 		payment_made=0
 		si_grand_amount=0
 		for bd in budget_list:
-				if bd.budget_b:
+			if bd.budget_b:
 				budget+=bd.budget_b
 		sales_invoice_list=frappe.db.sql("""select distinct(parent) from `tabSales Invoice Item` where sales_order='{0}';""".format(sa.name),as_dict=True)
 		po_item_list= frappe.db.sql("""select distinct(parent) from `tabPurchase Order Item` where sales_order='{0}';""".format(sa.name),as_dict=True)
